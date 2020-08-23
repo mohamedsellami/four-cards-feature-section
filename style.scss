@@ -1,0 +1,131 @@
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  color: $very-dark-blue;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.powered {
+  text-align: center;
+  font-weight: 900;
+  font-size: 25px;
+  color: $very-dark-blue;
+  margin-top: 0;
+}
+.main-paragraph {
+  text-align: center;
+  font-size: 15px;
+  width: 300px;
+  margin: auto;
+  color: $very-dark-blue;
+}
+.cards {
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 300px;
+  gap: 20px;
+  grid-template-rows: auto auto auto auto auto;
+  div {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    p {
+      font-size: 12px;
+    }
+    img {
+      float: right;
+    }
+  }
+  .supervisor {
+    border-top: 5px solid $cyan;
+    margin: auto;
+  }
+  .team-builder {
+    border-top: 5px solid $red;
+  }
+  .karma {
+    border-top: 5px solid $orange;
+  }
+  .calculator {
+    border-top: 5px solid $blue;
+    margin: auto;
+  }
+}
+
+@media screen and(min-width: 650px) {
+  .title {
+    font-size: 30px;
+  }
+  .powered {
+    font-size: 31px;
+  }
+  .main-paragraph {
+    font-size: 13px;
+    width: 430px;
+  }
+  .cards {
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto;
+    .supervisor {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    .calculator {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+}
+@media screen and(min-width: 980px) {
+  .cards {
+    grid-template-columns: 300px 300px 300px;
+    .supervisor {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    .calculator {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+}
